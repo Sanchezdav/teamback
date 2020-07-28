@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Galada&display=swap');
+
+html, body {
+  background-color: $light-grey;
+  min-height: 100%;
+}
+
+body {
+  position: relative;
+  min-height: 100vh;
+}
+
+h1.logo {
+  background-clip: text;
+  background-image: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);
+  color: transparent;
+  font-family: 'Galada', cursive;
+}

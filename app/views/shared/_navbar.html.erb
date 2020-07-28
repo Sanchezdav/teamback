@@ -1,0 +1,37 @@
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="container">
+    <div class="navbar-brand">
+      <%= link_to authenticated_root_path, class: 'navbar-item py-4' do %>
+        <h1 class="logo title is-2">Teamback</h1>
+      <% end %>
+
+      <a role="button" class="navbar-burger burger mt-4" aria-label="menu" aria-expanded="false" data-target="mobile-navbar">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+
+    <div id="mobile-navbar" class="navbar-menu">
+      <div class="navbar-end">
+        <p class="navbar-item"><%= current_user.name.mentionable %></p>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link">
+            logo
+          </a>
+
+          <div class="navbar-dropdown">
+            <a class="navbar-item">
+              Profile
+            </a>
+            <a class="navbar-item">
+              Teams
+            </a>
+            <hr class="navbar-divider">
+            <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: 'navbar-item' %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>

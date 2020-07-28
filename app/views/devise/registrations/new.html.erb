@@ -1,29 +1,52 @@
-<h2>Sign up</h2>
+<h2 class="subtitle is-2">Sign Up</h2>
+<hr />
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
-
   <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <%= f.label 'Full Name', class: 'label' %>
+    <div class="control">
+      <%= f.text_field :name, autofocus: true, class: 'input' %>
+      <p class="help has-text-danger">
+        <%= show_input_error(@user, :name) %>
+      </p>
+    </div>
   </div>
 
   <div class="field">
-    <%= f.label :password %>
+    <%= f.label :email, class: 'label' %>
+    <div class="control">
+      <%= f.email_field :email, autocomplete: "email", class: 'input' %>
+      <p class="help has-text-danger">
+        <%= show_input_error(@user, :email) %>
+      </p>
+    </div>
+  </div>
+
+  <div class="field">
+    <%= f.label :password, class: 'label'%>
+    <div class="control">
+      <%= f.password_field :password, autocomplete: "new-password", class: 'input' %>
+    </div>
     <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
+      <p class="help">(<%= @minimum_password_length %> characters minimum)</p>
+    <% end %>
+    <p class="help has-text-danger">
+      <%= show_input_error(@user, :password) %>
+    </p>
   </div>
 
   <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+    <%= f.label :password_confirmation, class: 'label' %>
+    <div class="control">
+      <%= f.password_field :password_confirmation, autocomplete: "new-password", class: 'input' %>
+    </div>
   </div>
 
-  <div class="actions">
-    <%= f.submit "Sign up" %>
+  <div class="field mt-5">
+    <%= f.submit "Sign up", class: 'button is-success is-fullwidth' %>
   </div>
 <% end %>
 
-<%= render "devise/shared/links" %>
+<div class="has-text-centered mt-5">
+  <%= render "devise/shared/links" %>
+</div>
