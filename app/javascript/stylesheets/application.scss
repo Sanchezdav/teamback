@@ -1,9 +1,11 @@
+@import 'abstracts/mixins';
 @import 'abstracts/variables';
 
 @import 'base/base';
 @import 'base/utilities';
 
 @import 'components/alert';
+@import 'components/avatar';
 @import 'components/errors';
 
 @import 'bulma';

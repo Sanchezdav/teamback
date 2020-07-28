@@ -1,7 +1,7 @@
 <nav class="navbar" role="navigation" aria-label="main navigation">
   <div class="container">
     <div class="navbar-brand">
-      <%= link_to authenticated_root_path, class: 'navbar-item py-4' do %>
+      <%= link_to authenticated_root_path, class: 'navbar-item pb-4 pt-5' do %>
         <h1 class="logo title is-2">Teamback</h1>
       <% end %>
 
@@ -17,7 +17,7 @@
         <p class="navbar-item"><%= current_user.name.mentionable %></p>
         <div class="navbar-item has-dropdown is-hoverable">
           <a class="navbar-link">
-            logo
+            <span class="avatar"><%= current_user.name.initials %></span>
           </a>
 
           <div class="navbar-dropdown">
