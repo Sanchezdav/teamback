@@ -1,3 +1,10 @@
 @mixin random-background() {
   background-color: rgb(random(255), random(255), random(255));
 }
+
+@mixin logo-text-style() {
+  background-clip: text;
+  background-image: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);
+  color: transparent;
+  font-family: 'Galada', cursive;
+}
