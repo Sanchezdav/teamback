@@ -1,0 +1,22 @@
+<%= form_with(model: team, local: true) do |form| %>
+  <div class="field">
+    <%= form.label :name, class: 'label' %>
+    <div class="control">
+      <%= form.text_field :name, class: 'input' %>
+      <p class="help has-text-danger">
+        <%= show_input_error(team, :name) %>
+      </p>
+    </div>
+  </div>
+
+  <div class="field">
+    <%= form.label :description, class: 'label' %>
+    <div class="control">
+      <%= form.text_area :description, class: 'textarea' %>
+    </div>
+  </div>
+
+  <div class="field">
+    <%= form.submit class: 'button is-success is-fullwidth' %>
+  </div>
+<% end %>

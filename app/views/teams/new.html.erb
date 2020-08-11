@@ -1,0 +1,18 @@
+<div class="container pt-5">
+  <%= link_to authenticated_root_path do %>
+    <i class="fa fa-arrow-left mr-1"></i>
+    Back
+  <% end %>
+  <div class="columns">
+    <div class="column is-half is-offset-one-quarter">
+      <div class="has-text-centered mb-5">
+        <h1 class="title is-2">Create a new team</h1>
+      </div>
+      <div class="card border-radius-10">
+        <div class="card-content">
+          <%= render 'form', team: @team %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

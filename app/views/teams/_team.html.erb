@@ -1,0 +1,18 @@
+<section>
+  <h2 class="title is-3"><%= team.name %></h2>
+  <p class="mb-5"><%= team.description %></p>
+  <div class="card border-radius-10 mb-5">
+    <div class="card-header">
+      <p class="card-header-title">Action Items</p>
+    </div>
+    <div class="card-content">
+      <ul>
+        <li>Add documentation</li>
+        <li>Create technical doubt tickets</li>
+        <li>Take a break</li>
+        <li>Support partners</li>
+      </ul>
+    </div>
+  </div>
+  <%= link_to 'Go to the team', team_path(team), class: 'button is-link' %>
+</section>

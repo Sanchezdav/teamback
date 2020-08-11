@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   end
   
   authenticated :user do
-    root to: 'home#index', as: :authenticated_root
+    root to: 'teams#index', as: :authenticated_root
+    resources :teams
   end
 end

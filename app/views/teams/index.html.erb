@@ -1,0 +1,35 @@
+<% if @teams.any? %>
+  <div class="teams columns" data-controller="teams" data-reflex-root>
+    <div class="column is-half px-5 py-5">
+      <div class="has-text-left mb-5">
+        <h2 class="title is-3">Teams</h2>
+      </div>
+      <% @teams.each do |team| %>
+        <a data-reflex="click->TeamsReflex#get_team" data-id="<%= team.id %>">
+          <div class="team-item card border-radius-10 mb-5">
+            <div class="card-content">
+              <h4 class="is-size-4 mb-4"><%= team.name %></h4>
+              <p>
+                <i class="fa fa-users"></i>
+                5
+              </p>
+            </div>
+          </div>
+        </a>
+      <% end %>
+    </div>
+    <div class="column is-half team px-5 py-5">
+      <% if @selected_team %>
+        <%= render '/teams/team', team: @selected_team %>
+      <% end %>
+    </div>
+  </div>
+<% else %>
+  <div class="has-text-centered pt-6">
+    <h2 class="text-logo is-size-2">Create your first team</h2>
+    <%= link_to new_team_path, class: 'button is-link' do %>
+      <i class="fa fa-plus-circle mr-2"></i>
+      Add here
+    <% end %>
+  </div>
+<% end %>

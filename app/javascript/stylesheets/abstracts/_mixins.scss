@@ -4,7 +4,7 @@
 
 @mixin logo-text-style() {
   background-clip: text;
-  background-image: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);
+  background-image: linear-gradient(to left, $violet, $dark-indigo, $dark-blue, $dark-green, $amber, $orange, $red);
   color: transparent;
   font-family: 'Galada', cursive;
 }
